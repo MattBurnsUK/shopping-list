@@ -1,12 +1,12 @@
 import React from "react";
 
-function Bread() {
+function ListItem(props){
     return (
         <div>
             <input type="checkbox" />
-            <li>Bread</li>
+            <li>{props.itemText}</li>
         </div>
     )
 }
 
-export default Bread;
+export default ListItem;

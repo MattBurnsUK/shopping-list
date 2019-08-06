@@ -1,7 +1,12 @@
 import React from "react";
 
 function Nails(){
-    return (<li>nails</li>)
+    return (
+        <div>
+            <input type="checkbox" />
+            <li>nails</li>
+        </div>
+    )
 }
 
 export default Nails;

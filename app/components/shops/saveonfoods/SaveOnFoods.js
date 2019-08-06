@@ -1,6 +1,6 @@
 import React from "react";
-import Bread from "./Bread";
-import Milk from "./Milk";
+
+import ListItem from "../ListItem";
 
 const storeStyles = {
     width: "100%",
@@ -13,8 +13,8 @@ function SaveOnFoods(){
     return (
         <section style={storeStyles}>
             <ul>
-                <Bread />
-                <Milk />
+                <ListItem itemText="milk"/>
+                <ListItem itemText="bread"/>
             </ul>
         </section>
     )

@@ -1,7 +1,12 @@
 import React from "react";
 
 function Milk() {
-    return (<li>Milk</li>)
+    return (
+        <div>
+            <input type="checkbox" />
+            <li>Milk</li>
+        </div>
+    )
 }
 
 export default Milk;

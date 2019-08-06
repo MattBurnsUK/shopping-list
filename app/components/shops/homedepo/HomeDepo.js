@@ -1,6 +1,6 @@
 import React from "react";
-import Wood from "./Wood";
-import Nails from "./Nail";
+
+import ListItem from "../ListItem";
 
 const storeStyles = {
     width: "100%",
@@ -13,8 +13,8 @@ function HomeDepo(){
     return (
         <section style={storeStyles}>
             <ul>
-                <Wood />
-                <Nails />
+                <ListItem itemText="wood"/>
+                <ListItem itemText="nails"/>
             </ul>
         </section>
     )
