@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Greeting from './components/Greeting'
+import App from './components/App'
 
 ReactDOM.render(
-    <Greeting />,
+    <App />,
     document.getElementById('app')
 );
