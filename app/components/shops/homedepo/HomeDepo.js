@@ -1,5 +1,6 @@
 import React from "react";
 
+import listData from "../../../listData";
 import ListItem from "../ListItem";
 
 const storeStyles = {
@@ -10,6 +11,15 @@ const storeStyles = {
 }
 
 function HomeDepo(){
+    
+    const listComponents = listData.map(function(item) {
+        if (item.store == "HomeDepo") {
+            return (
+                <ListItem itemText={item.itemText} />
+            )
+        }
+        })
+
     return (
         <section style={storeStyles}>
             <ul>

@@ -20,3 +20,5 @@ const listData = [
         itemText: "wood"
     }
 ]
+
+export default listData;

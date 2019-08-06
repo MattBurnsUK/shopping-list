@@ -1,5 +1,6 @@
 import React from "react";
 
+import listData from "../../../listData";
 import ListItem from "../ListItem";
 
 const storeStyles = {
@@ -10,11 +11,19 @@ const storeStyles = {
 }
 
 function SaveOnFoods(){
+
+    const listComponents = listData.map(function(item) {
+        if (item.store == "SaveOnFoods") {
+            return (
+                <ListItem itemText={item.itemText} />
+            )
+        }
+        })
+
     return (
         <section style={storeStyles}>
             <ul>
-                <ListItem itemText="milk"/>
-                <ListItem itemText="bread"/>
+                {listComponents}
             </ul>
         </section>
     )
