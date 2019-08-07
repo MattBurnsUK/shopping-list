@@ -20,7 +20,7 @@ function SaveOnFoods(){
     const listComponents = listData.map(function(item) {
         if (item.store == "SaveOnFoods") {
             return (
-                <ListItem itemText={item.itemText} />
+                <ListItem key={item.id} itemText={item.itemText} />
             )
         }
         })

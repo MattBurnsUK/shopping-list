@@ -20,7 +20,7 @@ function HomeDepo(){
     const listComponents = listData.map(function(item) {
         if (item.store == "HomeDepo") {
             return (
-                <ListItem itemText={item.itemText} />
+                <ListItem key={item.id} itemText={item.itemText} />
             )
         }
         })
