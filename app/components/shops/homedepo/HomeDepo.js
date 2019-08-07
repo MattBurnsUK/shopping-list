@@ -4,10 +4,15 @@ import listData from "../../../listData";
 import ListItem from "../ListItem";
 
 const storeStyles = {
-    width: "100%",
-    border: "5px solid black",
+    width: "90%",
+    border: "1px solid black",
+    boxShadow: "5px 10px 8px #888888",
     padding: "10px",
     margin: "20px"
+}
+
+const listStyles = {
+    listStyle: "none",
 }
 
 function HomeDepo(){
@@ -22,9 +27,9 @@ function HomeDepo(){
 
     return (
         <section style={storeStyles}>
-            <ul>
-                <ListItem itemText="wood"/>
-                <ListItem itemText="nails"/>
+            <h3>Home Depo:</h3>
+            <ul style={listStyles}>
+                {listComponents}
             </ul>
         </section>
     )

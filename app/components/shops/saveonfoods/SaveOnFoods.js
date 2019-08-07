@@ -4,10 +4,15 @@ import listData from "../../../listData";
 import ListItem from "../ListItem";
 
 const storeStyles = {
-    width: "100%",
-    border: "5px solid black",
+    width: "90%",
+    border: "1px solid black",
+    boxShadow: "5px 10px 8px #888888",
     padding: "10px",
     margin: "20px"
+}
+
+const listStyles = {
+    listStyle: "none",
 }
 
 function SaveOnFoods(){
@@ -22,7 +27,8 @@ function SaveOnFoods(){
 
     return (
         <section style={storeStyles}>
-            <ul>
+            <h3>Save On Foods:</h3>
+            <ul style={listStyles}>
                 {listComponents}
             </ul>
         </section>
