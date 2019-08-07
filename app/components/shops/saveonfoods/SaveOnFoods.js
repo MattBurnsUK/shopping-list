@@ -1,7 +1,9 @@
 import React from "react";
 
 import listData from "../../../listData";
-import ListItem from "../ListItem";
+import ListItem from "../../ListItem";
+
+import AddListItem from "../../AddListItem";
 
 const storeStyles = {
     width: "90%",
@@ -31,6 +33,7 @@ function SaveOnFoods(){
             <ul style={listStyles}>
                 {listComponents}
             </ul>
+            <AddListItem />
         </section>
     )
 }
