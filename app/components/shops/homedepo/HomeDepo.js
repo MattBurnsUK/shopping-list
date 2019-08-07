@@ -18,6 +18,8 @@ const listStyles = {
 }
 
 function HomeDepo(){
+
+    /* make an array of components with associated props, where the item's store is HomeDepo */
     
     const listComponents = listData.map(function(item) {
         if (item.store == "HomeDepo") {
@@ -31,7 +33,7 @@ function HomeDepo(){
         <section style={storeStyles}>
             <h3>Home Depo:</h3>
             <ul style={listStyles}>
-                {listComponents}
+                {listComponents}  {/* return the array */}
             </ul>
             <AddListItem />
         </section>

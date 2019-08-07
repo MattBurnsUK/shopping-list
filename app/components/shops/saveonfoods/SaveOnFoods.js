@@ -19,6 +19,8 @@ const listStyles = {
 
 function SaveOnFoods(){
 
+    /* make an array of components with associated props, where the item's store is SaveOnFoods */
+
     const listComponents = listData.map(function(item) {
         if (item.store == "SaveOnFoods") {
             return (
@@ -31,7 +33,7 @@ function SaveOnFoods(){
         <section style={storeStyles}>
             <h3>Save On Foods:</h3>
             <ul style={listStyles}>
-                {listComponents}
+                {listComponents}  {/* return the array */}
             </ul>
             <AddListItem />
         </section>
