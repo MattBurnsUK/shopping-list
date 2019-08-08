@@ -17,27 +17,36 @@ const listStyles = {
     listStyle: "none",
 }
 
-function HomeDepo(){
-
-    /* make an array of components with associated props, where the item's store is HomeDepo */
-    
-    const listComponents = listData.map(function(item) {
-        if (item.store == "HomeDepo") {
-            return (
-                <ListItem key={item.id} itemText={item.itemText} />
-            )
+class HomeDepo extends React.Component {
+    constructor(){
+        super()
+        this.state = {
+            listData: listData
         }
-        })
+    }
 
-    return (
-        <section style={storeStyles}>
-            <h3>Home Depo:</h3>
-            <ul style={listStyles}>
-                {listComponents}  {/* return the array */}
-            </ul>
-            <AddListItem />
-        </section>
-    )
+    render() {
+        /* make an array of components with associated props, where the item's store is HomeDepo */
+            
+        const listComponents = this.state.listData.map(function(item) {
+            if (item.store == "HomeDepo") {
+                return (
+                    <ListItem key={item.id} itemText={item.itemText} />
+                )
+            }
+            })
+
+        return (
+            <section style={storeStyles}>
+                <h3>Home Depo:</h3>
+                <ul style={listStyles}>
+                    {listComponents}  {/* return the array */}
+                </ul>
+                <AddListItem />
+            </section>
+        )
+    }
+    
 }
 
 export default HomeDepo;
