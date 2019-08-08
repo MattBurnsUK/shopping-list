@@ -10,7 +10,7 @@ function AddListItem(){
     return (
         <section>
             <input type="text" id="new-item-text" />
-            <button onClick={addNewItem} />
+            <button onClick={addNewItem.bind(this, )} />
         </section>
     )
 }

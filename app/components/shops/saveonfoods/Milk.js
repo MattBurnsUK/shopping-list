@@ -1,12 +1,13 @@
 import React from "react";
 
-function Milk() {
-    return (
-        <div>
-            <input type="checkbox" />
-            <li>Milk</li>
-        </div>
-    )
+class Milk extends React.Component {
+    render() {
+        return (
+            <div>
+                <input type="checkbox" />
+                <li>Milk</li>
+            </div> )
+    }
 }
 
 export default Milk;
