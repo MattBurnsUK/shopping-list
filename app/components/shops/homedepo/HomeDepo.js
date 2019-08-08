@@ -23,6 +23,11 @@ class HomeDepo extends React.Component {
         this.state = {
             listData: listData
         }
+        this.updateCheckbox = this.updateCheckbox.bind(this)
+    }
+
+    updateCheckbox(id){
+        console.log("changed", id)
     }
 
     render() {
@@ -31,7 +36,7 @@ class HomeDepo extends React.Component {
         const listComponents = this.state.listData.map(function(item) {
             if (item.store == "HomeDepo") {
                 return (
-                    <ListItem key={item.id} itemText={item.itemText} />
+                    <ListItem id={item.id} key={item.id} itemText={item.itemText} purchased={item.purchased} updateCheckbox={this.updateCheckbox.bind(this)}/>
                 )
             }
             })

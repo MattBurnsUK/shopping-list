@@ -2,22 +2,26 @@ const listData = [
     {
         id: 1,
         store: "SaveOnFoods",
-        itemText: "bread"
+        itemText: "bread",
+        purchased: false
     },
     {
         id: 2,
         store: "SaveOnFoods",
-        itemText: "milk"
+        itemText: "milk",
+        purchased: false
     },
     {
         id: 3,
         store: "HomeDepo",
-        itemText: "nails"
+        itemText: "nails",
+        purchased: true
     },
     {
         id: 4,
         store: "HomeDepo",
-        itemText: "wood"
+        itemText: "wood",
+        purchased: false
     }
 ]
 
