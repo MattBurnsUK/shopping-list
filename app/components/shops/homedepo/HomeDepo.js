@@ -21,25 +21,20 @@ class HomeDepo extends React.Component {
     constructor(){
         super()
         this.state = {
-            listData: listData
+            listData : listData
         }
-        this.updateCheckbox = this.updateCheckbox.bind(this)
-    }
-
-    updateCheckbox(id){
-        console.log("changed", id)
     }
 
     render() {
-        /* make an array of components with associated props, where the item's store is HomeDepo */
-            
-        const listComponents = this.state.listData.map(function(item) {
-            if (item.store == "HomeDepo") {
-                return (
-                    <ListItem id={item.id} key={item.id} itemText={item.itemText} purchased={item.purchased} updateCheckbox={this.updateCheckbox.bind(this)}/>
-                )
-            }
-            })
+            /* make an array of components with associated props, where the item's store is HomeDepo */
+                
+            const listComponents = this.state.listData.map(function(item) {
+                if (item.store == "HomeDepo") {
+                    return (
+                        <ListItem id={item.id} key={item.id} itemText={item.itemText} purchased={item.purchased} />
+                    )
+                }
+                })
 
         return (
             <section style={storeStyles}>

@@ -31,7 +31,7 @@ class SaveOnFoods extends React.Component {
         const listComponents = this.state.listData.map(function(item) {
             if (item.store == "SaveOnFoods") {
                 return (
-                    <ListItem key={item.id} itemText={item.itemText} purchased={item.purchased}/>
+                    <ListItem id={item.id} key={item.id} itemText={item.itemText} purchased={item.purchased}/>
                 )
             }
             })
