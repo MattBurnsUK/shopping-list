@@ -1,7 +1,8 @@
 import React from "react";
 
 const listItemStylesChecked = {
-    textDecoration: "line-through"
+    textDecoration: "line-through",
+    color: "#cdcdcd"
 }
 
 class ListItem extends React.Component {
@@ -30,7 +31,7 @@ class ListItem extends React.Component {
                     */
                     />
                     {console.log(this.props.purchased)}
-                <li style={this.getListItemStyles(this.props.purchased)}>{this.props.itemText}</li>
+                <li style={this.props.purchased ? listItemStylesChecked : null}>{this.props.itemText}</li>
             </div>
         )
         }

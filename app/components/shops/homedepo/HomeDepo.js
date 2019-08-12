@@ -18,13 +18,14 @@ const listStyles = {
 }
 
 class HomeDepo extends React.Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             listData : listData,
             storeView: HomeDepo
         }
         this.updateCheckbox = this.updateCheckbox.bind(this)
+        this.addToList = this.addToList.bind(this)
     }
 
     updateCheckbox(id){
@@ -37,6 +38,29 @@ class HomeDepo extends React.Component {
             })
             return {
                 listData: newListData
+            }
+        })
+    }
+
+    addToList() {
+        this.setState((prevState) => {
+            let inputID = "new-text-HomeDepo";
+            console.log("input id is " + inputID)
+            let newItemText = document.getElementById(inputID).value;
+            let store = theStore;
+                console.log("new item text is ", newItemText)
+                console.log("store is ", store)
+            let itemCount = this.state.listData.length;
+            let nextItemCount = itemCount++;
+            let theStore = this.state.storeView;
+            let newItemObj = {
+                id: {nextItemCount},
+                store: {theStore},
+                itemText: {newItemText},
+                purchased: false
+            }
+            return{
+                listDate: prevState.push(newItemObj)
             }
         })
     }
@@ -60,7 +84,7 @@ class HomeDepo extends React.Component {
                 <ul style={listStyles}>
                     {listComponents}  {/* return the array */}
                 </ul>
-                <AddListItem forStore={theStore}/>
+                <AddListItem forStore={theStore} addToListAction={this.addToList}/>
             </section>
         )
     }

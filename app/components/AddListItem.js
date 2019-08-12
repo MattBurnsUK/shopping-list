@@ -17,7 +17,7 @@ class AddListItem extends React.Component {
         return (
             <section>
                 <input type="text" id={inputID} />
-                <button onClick={(event) => addNewListItem(this.props.forStore)} />
+                <button onClick={(event) => this.props.addToListAction(this.props.forStore)} />
             </section>
         )
     }
