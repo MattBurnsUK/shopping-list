@@ -21,7 +21,8 @@ class SaveOnFoods extends React.Component {
     constructor(){
         super()
         this.state = {
-            listData: listData
+            listData: listData,
+            storeView: SaveOnFoods
         }
         this.updateCheckbox = this.updateCheckbox.bind(this)
     }
@@ -52,12 +53,12 @@ class SaveOnFoods extends React.Component {
             });
 
         return (
-            <section style={storeStyles}>
+            <section style={storeStyles} id={this.state.storeView}>
                 <h3>Save On Foods:</h3>
                 <ul style={listStyles}>
                     {listComponents}  {/* return the array */}
                 </ul>
-                <AddListItem />
+                <AddListItem forStore={this.state.storeView}/>
             </section>
         )
     }

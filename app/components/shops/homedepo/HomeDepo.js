@@ -21,7 +21,8 @@ class HomeDepo extends React.Component {
     constructor(){
         super()
         this.state = {
-            listData : listData
+            listData : listData,
+            storeView: HomeDepo
         }
         this.updateCheckbox = this.updateCheckbox.bind(this)
     }
@@ -50,14 +51,16 @@ class HomeDepo extends React.Component {
                     )
                 }
                 });
-                
+            
+            const theStore = "HomeDepo";
+            console.log("the store var is ", theStore);                
         return (
-            <section style={storeStyles}>
+            <section style={storeStyles} id={theStore}>
                 <h3>Home Depo:</h3>
                 <ul style={listStyles}>
                     {listComponents}  {/* return the array */}
                 </ul>
-                <AddListItem />
+                <AddListItem forStore={theStore}/>
             </section>
         )
     }

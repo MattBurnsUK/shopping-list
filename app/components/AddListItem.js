@@ -1,18 +1,26 @@
 import React from "react";
 
-function AddListItem(){
-    function addNewItem(e){
-        console.log (e.target.value);
-        let newItem = document.getElementById("new-item-text");
-        console.log (newItem.value);
+class AddListItem extends React.Component {
+    constructor(){
+        super()
     }
 
-    return (
-        <section>
-            <input type="text" id="new-item-text" />
-            <button onClick={addNewItem.bind(this, )} />
-        </section>
-    )
+    render(){
+        const inputID = "new-text-" + this.props.forStore;
+
+        var addNewListItem = (theStore) => {
+            let newItemText = document.getElementById(inputID).value;
+            let store = theStore;
+                console.log("new item text is ", newItemText)
+                console.log("store is ", store)
+            }
+        return (
+            <section>
+                <input type="text" id={inputID} />
+                <button onClick={(event) => addNewListItem(this.props.forStore)} />
+            </section>
+        )
+    }
 }
 
 export default AddListItem;
