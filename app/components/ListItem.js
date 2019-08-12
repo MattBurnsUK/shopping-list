@@ -1,9 +1,21 @@
 import React from "react";
 
+const listItemStylesChecked = {
+    textDecoration: "line-through"
+}
+
 class ListItem extends React.Component {
     constructor(props){
         super(props)
+        this.getListItemStyles = this.getListItemStyles.bind(this)
     }
+
+    getListItemStyles(purchased){
+        if (purchased === true){
+            return (listItemStylesChecked)
+        }
+    }
+
     
     render() {
         return (
@@ -17,7 +29,8 @@ class ListItem extends React.Component {
                     This will invoke the updateCheckbox(id) method
                     */
                     />
-                <li>{this.props.itemText}</li>
+                    {console.log(this.props.purchased)}
+                <li style={this.getListItemStyles(this.props.purchased)}>{this.props.itemText}</li>
             </div>
         )
         }

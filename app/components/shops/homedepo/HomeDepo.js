@@ -27,7 +27,6 @@ class HomeDepo extends React.Component {
     }
 
     updateCheckbox(id){
-        console.log("changed", id);
         this.setState((prevState) => {
             const newListData = prevState.listData.map(listDataItem => {
                 if (listDataItem.id == id) {

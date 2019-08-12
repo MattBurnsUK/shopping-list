@@ -23,18 +23,33 @@ class SaveOnFoods extends React.Component {
         this.state = {
             listData: listData
         }
+        this.updateCheckbox = this.updateCheckbox.bind(this)
+    }
+
+    updateCheckbox(id){
+        this.setState((prevState) => {
+            const newListData = prevState.listData.map(listDataItem => {
+                if (listDataItem.id == id) {
+                    listDataItem.purchased = !listDataItem.purchased
+                }
+                return listDataItem
+            })
+            return {
+                listData: newListData
+            }
+        })
     }
 
     render(){
-        /* make an array of components with associated props, where the item's store is SaveOnFoods */
-
-        const listComponents = this.state.listData.map(function(item) {
-            if (item.store == "SaveOnFoods") {
-                return (
-                    <ListItem id={item.id} key={item.id} itemText={item.itemText} purchased={item.purchased}/>
+        /* make an array of components with associated props, where the item's store is HomeDepo */
+            
+        const listComponents = this.state.listData.map(item => {
+            if (item.store == "HomeDepo") {
+               return (
+                    <ListItem id={item.id} key={item.id} itemText={item.itemText} purchased={item.purchased} updateCheckbox={this.updateCheckbox}/>
                 )
             }
-            })
+            });
 
         return (
             <section style={storeStyles}>
