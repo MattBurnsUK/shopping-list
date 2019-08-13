@@ -22,7 +22,7 @@ class HomeDepo extends React.Component {
         super(props)
         this.state = {
             listData : listData,
-            storeView: HomeDepo
+            storeView: "HomeDepo"
         }
         this.updateCheckbox = this.updateCheckbox.bind(this)
         this.addToList = this.addToList.bind(this)
@@ -42,30 +42,37 @@ class HomeDepo extends React.Component {
         })
     }
 
-    addToList() {
-        this.setState((prevState) => {
-            let inputID = "new-text-HomeDepo";
-            console.log("input id is " + inputID)
-            let newItemText = document.getElementById(inputID).value;
-            let store = theStore;
+    addToList(passedStore, newItemText) {
+     /*   let inputID = "new-text-HomeDepo";
+            console.log("input id is " + inputID);
+            let newItemText = document.getElementById(inputID) !== null ? document.getElementById(inputID).value : "waiting";
+            let store = this.state.storeView;
                 console.log("new item text is ", newItemText)
                 console.log("store is ", store)
+        */
             let itemCount = this.state.listData.length;
-            let nextItemCount = itemCount++;
-            let theStore = this.state.storeView;
+            console.log(itemCount);
+            let nextItemCount = itemCount+1;
             let newItemObj = {
-                id: {nextItemCount},
-                store: {theStore},
-                itemText: {newItemText},
+                id: nextItemCount,
+                store: passedStore,
+                itemText: newItemText,
                 purchased: false
-            }
+            }   // new item obj is missing the text - "waiting" is being used
+        this.setState((prevState) => {
+            console.log(prevState.listData);
+            console.log(newItemObj);
+                prevState.listData.push(newItemObj);
+                console.log("after the push" + prevState.listData)
             return{
-                listDate: prevState.push(newItemObj)
+                listData: prevState.listData,
             }
         })
+        console.log("here is the updated state list data " + this.state.listData);
     }
 
     render() {
+            console.log(this.state.listData);
             /* make an array of components with associated props, where the item's store is HomeDepo */
             
             const listComponents = this.state.listData.map(item => {
