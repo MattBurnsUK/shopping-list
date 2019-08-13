@@ -42,56 +42,47 @@ class HomeDepo extends React.Component {
         })
     }
 
-    addToList(passedStore, newItemText) {
-     /*   let inputID = "new-text-HomeDepo";
-            console.log("input id is " + inputID);
+    addToList(passedStore) {
+            const inputID = "new-text-" + this.state.storeView;
             let newItemText = document.getElementById(inputID) !== null ? document.getElementById(inputID).value : "waiting";
-            let store = this.state.storeView;
-                console.log("new item text is ", newItemText)
-                console.log("store is ", store)
-        */
+
             let itemCount = this.state.listData.length;
-            console.log(itemCount);
             let nextItemCount = itemCount+1;
             let newItemObj = {
                 id: nextItemCount,
                 store: passedStore,
                 itemText: newItemText,
                 purchased: false
-            }   // new item obj is missing the text - "waiting" is being used
+            }
         this.setState((prevState) => {
-            console.log(prevState.listData);
-            console.log(newItemObj);
                 prevState.listData.push(newItemObj);
-                console.log("after the push" + prevState.listData)
             return{
                 listData: prevState.listData,
             }
         })
-        console.log("here is the updated state list data " + this.state.listData);
     }
 
     render() {
-            console.log(this.state.listData);
             /* make an array of components with associated props, where the item's store is HomeDepo */
             
             const listComponents = this.state.listData.map(item => {
-                if (item.store == "HomeDepo") {
+                if (item.store == this.state.storeView) {
                    return (
                         <ListItem id={item.id} key={item.id} itemText={item.itemText} purchased={item.purchased} updateCheckbox={this.updateCheckbox}/>
                     )
                 }
                 });
             
-            const theStore = "HomeDepo";
-            console.log("the store var is ", theStore);                
+            const theStore = this.state.storeView;
+            const inputID = "new-text-" + this.state.storeView;
+
         return (
             <section style={storeStyles} id={theStore}>
                 <h3>Home Depo:</h3>
                 <ul style={listStyles}>
                     {listComponents}  {/* return the array */}
                 </ul>
-                <AddListItem forStore={theStore} addToListAction={this.addToList}/>
+                <AddListItem forStore={theStore} addToListAction={this.addToList} inputID={inputID}/>
             </section>
         )
     }

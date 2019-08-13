@@ -6,15 +6,12 @@ class AddListItem extends React.Component {
     }
 
     render(){
-        const inputID = "new-text-" + this.props.forStore;
-        let newItemText = document.getElementById(inputID) !== null ? document.getElementById(inputID).value : "waiting";
-        console.log(newItemText);
         let store = this.props.forStore;
 
         return (
             <section>
-                <input type="text" id={inputID} />
-                <button onClick={(event) => this.props.addToListAction(store, newItemText)} />
+                <input type="text" id={this.props.inputID} />
+                <button type="submit" onClick={(event) => this.props.addToListAction(store)} />
             </section>
         )
     }
