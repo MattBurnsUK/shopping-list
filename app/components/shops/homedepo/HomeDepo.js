@@ -7,14 +7,26 @@ import AddListItem from "../../AddListItem";
 
 const storeStyles = {
     width: "90%",
-    border: "1px solid black",
     boxShadow: "5px 10px 8px #888888",
     padding: "10px",
-    margin: "20px"
+    margin: "20px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    backgroundColor: "#FFF2AB",
+    borderBottom: "4px solid #ccc",
+    borderRadius: "5px",
+    borderTop: "4px solid yellow"
 }
 
 const listStyles = {
     listStyle: "none",
+}
+
+const storeItemContainer = {
+    width: "auto",
+    textAlign: "center",
+    marginLeft: "auto",
+    marginRight: "auto"
 }
 
 class HomeDepo extends React.Component {
@@ -78,11 +90,13 @@ class HomeDepo extends React.Component {
 
         return (
             <section style={storeStyles} id={theStore}>
-                <h3>Home Depo:</h3>
-                <ul style={listStyles}>
-                    {listComponents}  {/* return the array */}
-                </ul>
-                <AddListItem forStore={theStore} addToListAction={this.addToList} inputID={inputID}/>
+                <section style={storeItemContainer}>
+                    <h3>Home Depo:</h3>
+                    <ul style={listStyles}>
+                        {listComponents}  {/* return the array */}
+                    </ul>
+                    <AddListItem forStore={theStore} addToListAction={this.addToList} inputID={inputID}/>
+                </section>
             </section>
         )
     }
