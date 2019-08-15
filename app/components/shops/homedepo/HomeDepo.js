@@ -7,6 +7,7 @@ import AddListItem from "../../AddListItem";
 
 const storeStyles = {
     width: "90%",
+    maxWidth: "500px",
     boxShadow: "5px 10px 8px #888888",
     padding: "10px",
     margin: "20px",
@@ -20,6 +21,10 @@ const storeStyles = {
 
 const listStyles = {
     listStyle: "none",
+    fontSize: "1.5em",
+    lineHeight: "1.5em",
+    textDecoration: "none",
+    padding: "10px"
 }
 
 const storeItemContainer = {
@@ -27,6 +32,15 @@ const storeItemContainer = {
     textAlign: "center",
     marginLeft: "auto",
     marginRight: "auto"
+}
+
+const storeHeaderStyles = {
+    textAlign: "center",
+    marginLeft: "auto",
+    marginRight: "auto",
+    textDecoration: "underline",
+    lineHeight: "1.5rem",
+    fontSize: "x-large"
 }
 
 class HomeDepo extends React.Component {
@@ -91,7 +105,7 @@ class HomeDepo extends React.Component {
         return (
             <section style={storeStyles} id={theStore}>
                 <section style={storeItemContainer}>
-                    <h3>Home Depo:</h3>
+                    <h3 style={storeHeaderStyles}>Home Depo:</h3>
                     <ul style={listStyles}>
                         {listComponents}  {/* return the array */}
                     </ul>

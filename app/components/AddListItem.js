@@ -10,7 +10,10 @@ const buttonStyles = {
     lineHeight: "1.2",
     whiteSpace: "nowrap",
     textDecoration: "none",
-    cursor: "pointer"
+    cursor: "pointer",
+    boxSizing: "border-box",
+    textDecoration: "none",
+    boxShaddow: "inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12)"
 }
 class AddListItem extends React.Component {
     constructor(){
